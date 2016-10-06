@@ -35,12 +35,12 @@
             $newEntry = null;
         $panelBody.empty();
 
+        console.log(typeof data);
+
         if (data.Response == "True") {
             console.log('true');
-            console.log(data.Search);
             data.Search.forEach(function(element, index) {
                 var $newEntry = $singleResult.clone();
-
                 $newEntry.children('.media-left').children('a').children('img').attr('src', element.Poster);
                 $newEntry.children('.media-body').children('h4').html(element.Title);
                 $newEntry.children('.media-body').children('p').text('Year: ' + element.Year + ' Type:' + element.Type);
